@@ -9,7 +9,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 # === 1️⃣ Load model & komponen ===
-model = load_model("model_jst_mbg.h5")
+model = load_model("model_lstm_mbg.h5")
 tfidf = pickle.load(open("tfidf_vectorizer.pkl", "rb"))
 le = pickle.load(open("label_encoder.pkl", "rb"))
 
