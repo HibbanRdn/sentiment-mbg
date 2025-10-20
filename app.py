@@ -11,8 +11,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # === 1️⃣ Load model & komponen ===
 # Pastikan nama file sesuai dengan yang kamu upload di repo
-model = load_model("model_jst_mbg.h5")  # atau model_lstm_mbg.h5 jika kamu ubah
-tokenizer = pickle.load(open("tfidf_vectorizer.pkl", "rb"))  # isinya Tokenizer
+model = load_model("model_lstm_mbg.h5")  # atau model_lstm_mbg.h5 jika kamu ubah
+tokenizer = pickle.load(open("tokenizer.pkl", "rb"))  # isinya Tokenizer
 le = pickle.load(open("label_encoder.pkl", "rb"))
 
 # === 2️⃣ Parameter penting ===
