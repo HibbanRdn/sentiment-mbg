@@ -10,7 +10,7 @@ from tensorflow.keras.models import load_model
 
 # === 1️⃣ Load model & komponen ===
 model = load_model("model_lstm_mbg.h5")
-tfidf = pickle.load(open("tfidf_vectorizer.pkl", "rb"))
+tfidf = pickle.load(open("tokenizer.pkl", "rb"))
 le = pickle.load(open("label_encoder.pkl", "rb"))
 
 # === 2️⃣ Fungsi pembersihan teks ===
