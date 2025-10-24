@@ -52,13 +52,13 @@ if st.button("Prediksi Sentimen"):
         result = predict_sentiment(user_input)
         if result == "positif":
             st.success(f"✨ Sentimen: **{result.upper()}** 😊")
-            st.image("https://tenor.com/en-GB/view/prabowo-wowo-presiden-2045-mulyono-gif-9284220189663362549")
+            st.image("https://media1.tenor.com/m/gNgtEpVk_fUAAAAC/prabowo-wowo.gif")
         elif result == "negatif":
             st.error(f"💢 Sentimen: **{result.upper()}** 😠")
-            st.image("https://tenor.com/en-GB/view/kabur-meme-gif-15154939118701081091")
+            st.image("https://media1.tenor.com/m/TOvdjlVjBLoAAAAC/gibran-savage.gif")
         else:
             st.info(f"😐 Sentimen: **{result.upper()}**")
-            st.image("https://tenor.com/en-GB/view/gibran-savage-debat-cawapres-gif-5542767369797174458")
+            st.image("https://media1.tenor.com/m/0lEo1YrZcgMAAAAC/kabur-meme.gif")
 
 st.markdown("---")
 st.caption("Dibangun dengan TensorFlow LSTM, Tokenizer, dan Streamlit 🧠")
