@@ -1,6 +1,6 @@
 # ============================================================
 
-# 🌐 Aplikasi Web Analisis Sentimen MBG - Model LSTM (Streamlit + GIF)
+# 🌐 Aplikasi Web Analisis Sentimen MBG - Model LSTM (Streamlit)
 
 # ============================================================
 
@@ -13,13 +13,15 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # === 1️⃣ Load model & komponen ===
 
-model = load_model("model_lstm_mbg.keras")
-tokenizer = pickle.load(open("tokenizer.pkl", "rb"))
+# Pastikan nama file sesuai dengan yang kamu upload di repo
+
+model = load_model("model_lstm_mbg.keras")  # atau model_lstm_mbg.h5 jika kamu ubah
+tokenizer = pickle.load(open("tokenizer.pkl", "rb"))  # isinya Tokenizer
 le = pickle.load(open("label_encoder.pkl", "rb"))
 
 # === 2️⃣ Parameter penting ===
 
-maxlen = 100
+maxlen = 100  # harus sama seperti saat training
 
 # === 3️⃣ Fungsi pembersihan teks ===
 
@@ -54,19 +56,15 @@ if user_input.strip() == "":
 st.warning("Teks tidak boleh kosong.")
 else:
 result = predict_sentiment(user_input)
-
-    if result == "positif":
-        st.success(f"✨ Sentimen: **{result.upper()}** 😊")
-        st.image("https://media.tenor.com/q8i5TxkKX40AAAAd/prabowo-wowo-presiden-2045-mulyono.gif")
-
-    elif result == "negatif":
-        st.error(f"💢 Sentimen: **{result.upper()}** 😠")
-        st.image("https://media.tenor.com/ftGx8H6InAIAAAAd/kabur-meme.gif")
-
-    else:  # netral
-        st.info(f"😐 Sentimen: **{result.upper()}**")
-        st.image("https://media.tenor.com/Q3PsN2eobwUAAAAd/gibran-savage-debat-cawapres.gif")
-
+if result == "positif":
+st.success(f"✨ Sentimen: **{result.upper()}** 😊")
+st.image("[https://tenor.com/en-GB/view/prabowo-wowo-presiden-2045-mulyono-gif-9284220189663362549](https://tenor.com/en-GB/view/prabowo-wowo-presiden-2045-mulyono-gif-9284220189663362549)")
+elif result == "negatif":
+st.error(f"💢 Sentimen: **{result.upper()}** 😠")
+st.image("[https://tenor.com/en-GB/view/kabur-meme-gif-15154939118701081091](https://tenor.com/en-GB/view/kabur-meme-gif-15154939118701081091)")
+else:
+st.info(f"😐 Sentimen: **{result.upper()}**")
+st.image("[https://tenor.com/en-GB/view/gibran-savage-debat-cawapres-gif-5542767369797174458](https://tenor.com/en-GB/view/gibran-savage-debat-cawapres-gif-5542767369797174458)")
 
 st.markdown("---")
 st.caption("Dibangun dengan TensorFlow LSTM, Tokenizer, dan Streamlit 🧠")
